@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of web development student from Czech republic">
+    <meta name="keywords" content="Portfolio, developer, web, student">
+    <meta name="author" content="Adam Vožda">
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 768px)">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|La+Belle+Aurore&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <title>Adam Vožda | Portfolio</title>
+</head>
+
+<body id="about-body">
+
+    <!-- Loader -->
+    <div class="loader-wrapper"> </div>
+    <!-- Navigation -->
+    <main id="aboutpage-container">
+        <nav id="main-nav">
+            <a href="index.html" class="logo"><img src="/img/logo.jpg" alt="logo.rocks"></a>
+            <ul class="list">
+
+                <a href="index.html">
+                    <li class="home"><i class="fi-xtluxl-home-thin" style="font-size: 1.6rem;color: rgb(73,73,73);"></i></li>
+                </a>
+                <a href="about.html">
+                    <li class="about"><i class="fi-xtluxl-user-thin" style="font-size: 1.6rem;"></i></li>
+                </a>
+                <a href="work.html">
+                    <li class="work"><i class="fi-xtluxl-eye-thin" style="color: rgb(73,73,73);font-size: 1.6rem;"></i></li>
+                </a>
+                <a href="contact.html">
+                    <li class="contact"><i class="fi-xtluxl-envelope-thin" style="color: rgb(73,73,73);font-size: 1.6rem;"></i></li>
+                </a>
+            </ul>
+            <ul class="socials">
+                <li>
+                    <a href="www.instagram.com" target="_blank"><i class="fi-xnsuxl-instagram" style="color: rgb(73,73,73);font-size: 1.1rem;"></i></a>
+                </li>
+                <li><a href="www.facebook.com" target="_blank"><i class="fi-snsuxl-facebook" style="color: rgb(73,73,73);font-size: 1rem;"></i></a></li>
+
+            </ul>
+
+        </nav>
+        <nav class="hamburger-menu">
+            <a href="index.html" class="logo"><img src="/img/logo.jpg" alt="logo.rocks"></a>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="hamburger-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="socials">
+                    <li>
+                        <a href="www.instagram.com" target="_blank"><i class="fi-xnsuxl-instagram" style="color: rgb(73,73,73);font-size: 1.1rem;"></i></a>
+                    </li>
+                    <li><a href="www.facebook.com" target="_blank"><i class="fi-snsuxl-facebook" style="color: rgb(73,73,73);font-size: 1rem;"></i></a></li>
+
+                </div>
+            </ul>
+
+        </nav>
+
+
+
+        <section id="aboutmain-section">
+            <!-- About section -->
+            <p class="scroll-message">Scroll!</p>
+            <div class="about-card">
+                <div>
+                    <h2 class="l-heading">About me</h2>
+                    <p>My name is Adam Vožda and I am 17 years old. I live in Czech republic and I am studying IT specialist on Creative hill college.</p>
+                    <p>My hobby is soccer which I play since I was 7 years old.</p>
+                </div>
+                <img src="/img/about.jpg" alt="myself">
+
+            </div>
+
+            <div class="about-card">
+                <div>
+                    <h2 class="l-heading"> What I am doing</h2>
+                    <p>Most of my time is consumed by studying. Now I am focusing on vanilla Javascript and after that I will start with React.</p>
+                    <p>In my freetime I play video games or soccer.</p>
+                </div>
+                <img src="/img/path.png" alt="mypath" class="aniview" data-av-animation="slideInRight">
+            </div>
+
+            <div class="about-card">
+                <div>
+                    <h2 class="l-heading">My inspiration</h2>
+                    <p>My biggest inspiration is my older brother.</p>
+                    <p>Mostly because he has graduated from 2 universities, right now he is working on his clothes brand Sledgehammer.</p>
+                </div>
+                <img src="/img/inspiration.png" alt="Sledgehammer">
+            </div>
+
+
+
+        </section>
+
+    </main>
+    <!-- Progress bar -->
+    <div class="progress-bar"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        /* Progress bar */
+
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop(),
+                dh = $(document).height(),
+                wh = $(window).height();
+            scrollPercent = (scroll / (dh - wh)) * 100;
+            $(".progress-bar").css("height", scrollPercent + "%");
+
+        });
+        /* Horizontal scroll */
+        if ($(window).width() >= 768) {
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop(),
+                    dh = $(document).height(),
+                    wh = $(window).height();
+                value = (scroll / (dh - wh)) * 100;
+                $("#aboutpage-container").css("left", -value * 2 + "%");
+            });
+        };
+    </script>
+</body>
+
+</html>
